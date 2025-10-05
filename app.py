@@ -5,7 +5,7 @@ import json
 import io
 import base64
 import matplotlib
-matplotlib.use('Agg') # <-- MUDANÇA 1: Garante que o Matplotlib funcione no servidor
+matplotlib.use('Agg') 
 import matplotlib.pyplot as plt
 from sklearn.tree import plot_tree
 from flask import Flask, request, jsonify, render_template
@@ -29,23 +29,6 @@ MODEL_FEATURES = [
     'orbital_period', 'transit_duration', 'transit_depth_ppm',
     'planet_radius', 'stellar_temp', 'stellar_logg', 'stellar_radius'
 ]
-
-
-@app.route('/')
-def home():
-    return render_template('index.html')
-
-
-@app.route('/guides')
-def guias():
-    return render_template('guides.html')
-
-
-@app.route('/results')
-def results():
-    return render_template('results.html')
-
-
 
 @app.route('/predict', methods=['POST'])
 def predict():
@@ -199,6 +182,7 @@ def random_tree_image():
 # O bloco abaixo é apenas para testes locais. O Render não o utilizará.
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
+
 
 
 
