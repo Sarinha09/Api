@@ -13,7 +13,7 @@ from flask_cors import CORS # <-- MUDANÇA 2 (Parte A): Importar a biblioteca CO
 import random
 
 app = Flask(__name__)
-CORS(app) # <-- MUDANÇA 2 (Parte B): Habilitar o CORS para toda a aplicação
+CORS(app) 
 
 # O resto do seu código permanece exatamente o mesmo
 try:
@@ -199,3 +199,4 @@ def random_tree_image():
 # O bloco abaixo é apenas para testes locais. O Render não o utilizará.
 if __name__ == '__main__':
     app.run(debug=True)
+
